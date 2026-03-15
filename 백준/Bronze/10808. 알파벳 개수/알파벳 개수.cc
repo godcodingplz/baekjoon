@@ -2,20 +2,17 @@
 using namespace std;
 
 string s;
-
+int freq[26] = {};
 
 int main(){
     cin >> s;
 
-    for(char a = 'a'; a<='z'; a++){
-        int cnt = 0;
-        for(auto c : s){
-            if(a == c){
-                cnt++;
-            }
-        }
-        cout << cnt << ' ';
+    for(auto c : s){
+        freq[c-'a']++;
     }
 
+    for(int i=0; i<26; i++){
+        cout << freq[i] << "\n";
+    }
     return 0;
 }
